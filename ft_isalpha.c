@@ -12,7 +12,7 @@
 
 /*#include <stdio.h>
 
-int	ft_isalpha(int numchar);
+int	ft_isalpha(int num);
 
 int	main(void)
 {

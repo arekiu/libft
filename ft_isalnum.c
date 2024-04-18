@@ -12,7 +12,7 @@
 
 /*#include <stdio.h>
 
-int	ft_isalnum(int numchar);
+int	ft_isalnum(int num);
 
 int	main(void)
 {

@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschmidt <aschmidt@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 16:29:47 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/18 16:29:51 by aschmidt         ###   ########.fr       */
+/*   Created: 2024/04/18 19:46:48 by aschmidt          #+#    #+#             */
+/*   Updated: 2024/04/18 19:46:50 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include <stdio.h>
 
-int	ft_isdigit(int num);
+int	ft_isprint(int num);
 
 int	main(void)
 {
-	printf("%d", ft_isdigit('d'));
+	printf("%d", ft_isprint(16));
 }
 */
-int	ft_isdigit(int num)
+int	ft_isprint(int num)
 {
-	if (num >= '0' && num <= '9')
+	if (num >= 32 && num <= 126)
 		return (1);
 	else
 		return (0);

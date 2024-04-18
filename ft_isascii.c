@@ -12,7 +12,7 @@
 
 /*#include <stdio.h>
 
-int	ft_isascii(int numchar);
+int	ft_isascii(int num);
 
 int	main(void)
 {
