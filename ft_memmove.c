@@ -26,10 +26,10 @@ int main ()
 
 void	*ft_memmove(void *str1, const void *str2, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	if (str1 == NULL || str2 == NULL)
+	if (!str1 || !str2)
 		return (NULL);
 	if ((unsigned char *)str1 > (unsigned char *)str2)
 	{
