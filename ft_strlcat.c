@@ -6,7 +6,7 @@
 /*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 15:44:16 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/22 16:28:07 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/22 16:31:52 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t n);
 static size_t	ft_strlen(const char *str);
-//compile the original strlcpy cc -Wall -Wextra -Werror ft_strlcpy.c -lbsd
+//compile the original strlcpy cc -Wall -Wextra -Werror ft_strlcat.c -lbsd
+//useful doc https://c-for-dummies.com/blog/?p=3896
 
 int	main(void)
 {
