@@ -6,7 +6,7 @@
 /*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 10:26:21 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/23 10:46:01 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/23 10:50:20 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int	main(void)
 {
 	char	*str = "donde estan los ladrones";
-	char	c = 'e';
+	char	c = 'x';
 
 	printf("aca esta: %s\n", memchr(str,c,10));
 
 	char	*str1 = "donde estan los ladrones";
-	char	c1 = 'e';
+	char	c1 = 'x';
 
 	printf("aca esta FT: %s\n", ft_memchr(str1,c1,10));
 }*/
@@ -40,7 +40,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (str[i] == ch)
-			return (str + i);
+			return ((void *)(str + i));
 		i++;
 	}
 	return (0);
