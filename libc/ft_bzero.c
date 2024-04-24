@@ -6,14 +6,15 @@
 /*   By: aschmidt <aschmidt@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 20:11:28 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/18 20:11:31 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/24 13:47:40 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <unistd.h>
-/*#include <stdio.h>
+#include <stdio.h>
 #include <string.h>
-
+/*
 void	ft_bzero(void *s, size_t n);
 
 int	main(void)
@@ -30,7 +31,7 @@ int	main(void)
 
 void	ft_bzero(void *s, size_t n)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*st;
 
 	i = 0;

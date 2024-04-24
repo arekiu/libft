@@ -6,10 +6,11 @@
 /*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 11:23:28 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/23 11:57:49 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:00:09 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
 /*#include <bsd/string.h>
 

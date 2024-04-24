@@ -6,10 +6,11 @@
 /*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 18:07:55 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/23 10:11:18 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:08:34 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
 #include <string.h>
 /*
@@ -26,7 +27,7 @@ int	main(void)
 	char	c1 = 'w';
 
 	printf("aca esta FT:%s\n", ft_strrchr(str1,c1));
-}*/
+}
 
 static size_t	ft_strlen(const char *str)
 {
@@ -38,7 +39,7 @@ static size_t	ft_strlen(const char *str)
 		i++;
 	}
 	return (i);
-}
+}*/
 
 char	*ft_strrchr(const char *str, int c)
 {

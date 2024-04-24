@@ -6,10 +6,11 @@
 /*   By: aschmidt <aschmidt@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 11:19:38 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/18 12:33:17 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/24 13:57:47 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <unistd.h>
 /*#include <string.h>
 #include <stdio.h>
@@ -32,7 +33,7 @@ int main () {
 
 void	*ft_memset(void *str, int c, size_t n)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*st;
 	unsigned char	ch;
 

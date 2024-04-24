@@ -6,10 +6,11 @@
 /*   By: aschmidt <aschmidt@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 16:29:47 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/18 16:29:51 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/24 13:54:15 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 /*#include <stdio.h>
 
 int	ft_isdigit(int num);

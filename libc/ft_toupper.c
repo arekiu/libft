@@ -6,10 +6,11 @@
 /*   By: aschmidt <aschmidt@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 15:42:55 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/22 15:43:12 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:01:08 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 /*#include <stdio.h>
 
 int	ft_toupper(int ch);

@@ -6,10 +6,11 @@
 /*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 11:42:57 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/23 12:38:46 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/24 13:45:29 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 /*#include <stdio.h>
 
 int	ft_atoi(const char *str);

@@ -6,10 +6,11 @@
 /*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 10:26:21 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/23 10:50:20 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/24 13:54:56 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
 /*#include <string.h>
 
@@ -30,7 +31,7 @@ int	main(void)
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*str;
 	unsigned char	ch;
 

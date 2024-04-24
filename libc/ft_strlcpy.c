@@ -6,10 +6,11 @@
 /*   By: aschmidt <aschmidt@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 11:54:27 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/19 11:54:29 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:08:11 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <unistd.h>
 /*#include <bsd/string.h>
 #include <stdio.h>
@@ -27,7 +28,7 @@ int	main(void)
     printf("Copied characters: %zu\n", result); // Use %zu for size_t
 
     printf("Modified string: %s\n", str);
-}*/
+}
 
 static size_t	ft_strlen(const char *str)
 {
@@ -39,7 +40,7 @@ static size_t	ft_strlen(const char *str)
 		i++;
 	}
 	return (i);
-}
+}*/
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 {

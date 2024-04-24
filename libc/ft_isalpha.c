@@ -6,10 +6,11 @@
 /*   By: aschmidt <aschmidt@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:51:11 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/18 12:51:13 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/24 13:53:44 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 /*#include <stdio.h>
 
 int	ft_isalpha(int num);

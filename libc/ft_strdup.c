@@ -6,10 +6,11 @@
 /*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 12:19:31 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/23 12:41:16 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:02:43 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 /*#include <stdio.h>
 
@@ -30,7 +31,7 @@ int	main()
  printf("Now t is: %s \n", t);
 
   return 0;
-}*/
+}
 
 static size_t	ft_strlen(const char *str)
 {
@@ -42,7 +43,7 @@ static size_t	ft_strlen(const char *str)
 		i++;
 	}
 	return (i);
-}
+}*/
 
 static char	*ft_strcpy(char *dest, char *src)
 {

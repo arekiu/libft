@@ -6,10 +6,11 @@
 /*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 15:44:16 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/22 16:31:52 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:07:40 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <unistd.h>
 /*#include <bsd/string.h>
 #include <stdio.h>
@@ -37,7 +38,7 @@ int	main(void)
 
     printf("Modified string FT: %s\n", stra);
 }
-*/
+
 static size_t	ft_strlen(const char *str)
 {
 	size_t	i;
@@ -48,7 +49,7 @@ static size_t	ft_strlen(const char *str)
 		i++;
 	}
 	return (i);
-}
+}*/
 
 size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {

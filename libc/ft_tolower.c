@@ -6,10 +6,11 @@
 /*   By: aschmidt <aschmidt@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 15:41:57 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/22 15:42:23 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:00:41 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 /*#include <stdio.h>
 
 int	ft_tolower(int ch);
