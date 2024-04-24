@@ -6,12 +6,12 @@
 /*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 16:37:23 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/24 15:57:43 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/24 16:22:53 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <stdio.h>
+#include "libft.h"
+/*#include <stdio.h>
 #include <string.h>
 
 char	*ft_strchr(const char *str, int c);
@@ -27,7 +27,7 @@ int	main(void)
 	char	c1 = 't';
 
 	printf("aca esta FT:%s\n", ft_strchr(str1,c1));
-}
+}*/
 
 char	*ft_strchr(const char *str, int c)
 {
@@ -43,6 +43,6 @@ char	*ft_strchr(const char *str, int c)
 		i++;
 	}
 	if (str[i] == ce)
-			return ((char *)(str + i));
+		return ((char *)(str + i));
 	return (0);
 }

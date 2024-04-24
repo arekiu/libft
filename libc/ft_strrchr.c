@@ -6,7 +6,7 @@
 /*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 18:07:55 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/24 14:08:34 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/24 16:22:38 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,16 @@ static size_t	ft_strlen(const char *str)
 
 char	*ft_strrchr(const char *str, int c)
 {
-	int	i;
+	int				i;
+	unsigned char	ce;
 
-	i = ft_strlen(str);
-	while (i -1 >= 0)
+	i = ft_strlen(str) - 1;
+	ce = c;
+	if (ce == 0)
+		return ((char *)(str + i + 1));
+	while (i >= 0)
 	{
-		if (str[i] == c)
+		if (str[i] == ce)
 			return ((char *)(str + i));
 		i--;
 	}
