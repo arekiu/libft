@@ -6,7 +6,7 @@
 /*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 09:03:07 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/24 15:38:16 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/25 14:14:56 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,16 @@ void *ft_memcpy(void *dest, const void * src, size_t n);
 int main () {
    const char src[30] = "anoche no dormi";
    char dest[30];
-   strcpy(dest,"Holis me fui a la chota!");
+   //strcpy(dest,"Holis me fui a la chota!");
  printf("Before memcpy dest = %s\n", dest);
    memcpy(dest, src, 5);
    printf("After memcpy dest = %s\n", dest);
-     printf("Before ft_memcpy dest = %s\n", dest);
-    ft_memcpy(dest, src, 5);
-    printf("After ft_memcpy dest = %s\n", dest);
+    const char src1[30] = "anoche no dormi";
+   char dest1[30];
+   //strcpy(dest1,"Holis me fui a la chota!");
+     printf("Before ft_memcpy dest = %s\n", dest1);
+    ft_memcpy(dest1, src1, 5);
+    printf("After ft_memcpy dest = %s\n", dest1);
 
    return(0);
 }*/
@@ -37,17 +40,15 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*sourc;
 	size_t			i;
 
+	if (!dest && !src)
+		return (dest);
 	desti = (unsigned char *)dest;
 	sourc = (unsigned char *)src;
 	i = 0;
-	if (n == 0)
-		return (dest);
-	if (!desti || !sourc)
-		return (NULL);
 	while (i < n)
 	{
 		desti[i] = sourc[i];
 		i++;
 	}
-	return (desti);
+	return (dest);
 }

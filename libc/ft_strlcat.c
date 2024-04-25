@@ -6,13 +6,13 @@
 /*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 15:44:16 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/24 14:07:40 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/25 17:39:16 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
-/*#include <bsd/string.h>
+/*#include <unistd.h>
+#include <bsd/string.h>
 #include <stdio.h>
 
 size_t	ft_strlcat(char *dest, const char *src, size_t n);
@@ -22,17 +22,17 @@ static size_t	ft_strlen(const char *str);
 
 int	main(void)
 {
-	char str[20] = "holandas";
-	char str1[] = "chau";
-	 size_t result = strlcat(str, str1, 10);
+	char str[20] = "AVEMARIA";
+	char str1[] = "lala";
+	 size_t result = strlcat(str, str1, 8);
 
     printf("Copied characters: %zu\n", result); // Use %zu for size_t
 
     printf("Modified string: %s\n", str);
 
-	char stra[20] = "holandas";
-	char strb[] = "chau";
-	 size_t ft_result = ft_strlcat(stra, strb, 10);
+	char stra[20] = "AVEMARIA";
+	char strb[] = "lala";
+	 size_t ft_result = ft_strlcat(stra, strb, 8);
 
     printf("Copied characters FT: %zu\n", ft_result); // Use %zu for size_t
 
@@ -55,16 +55,16 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {
 	size_t	i;
 	size_t	j;
-	int		result;
+	size_t	result;
 
 	i = 0;
 	j = 0;
 	result = ft_strlen(src) + ft_strlen(dest);
+	if (n <= ft_strlen(dest))
+		return (n + ft_strlen(src));
 	while (dest[i] != '\0')
-	{
 		i++;
-	}
-	while (i < n - 1)
+	while (j < n - 1 && src[j] != '\0')
 	{
 		dest[i] = src[j];
 		i++;
