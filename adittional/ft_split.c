@@ -65,6 +65,7 @@ static char	*put_word(char **arr, char const *str, int words, int a)
         }
     }
 	str_arr[a] = ft_substr(s, 0, 0);
+	return (str_arr);
 }
 
 char	**ft_split(char const *str, char c)
@@ -79,6 +80,7 @@ char	**ft_split(char const *str, char c)
 	if (str_arr == NULL)
 		return (NULL);
 	put_word(str_arr, str, words, id_arr);
+	return (str_arr);
 }
 
 int	main(void)
@@ -88,4 +90,6 @@ int	main(void)
 
 	int num_words = count_wds(str,c);
 	printf("num wds %d\n", num_words);
+
+	return (0);
 }
