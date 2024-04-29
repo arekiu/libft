@@ -6,7 +6,7 @@
 /*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 12:17:58 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/25 18:26:54 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/29 10:13:48 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t			i;
 
 	i = 0;
-	if (size > 0 && count * size > SIZE_MAX)
+	if (size > 0 && count > SIZE_MAX / size)
 		return (NULL);
 	buffer = malloc(count * size);
 	if (buffer == NULL)
