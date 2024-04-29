@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/29 10:09:01 by aschmidt          #+#    #+#             */
+/*   Updated: 2024/04/29 10:25:56 by aschmidt         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
+#include <stdlib.h>
 
 char	**ft_split(char const *s, char c);
 
@@ -43,13 +56,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (sub);
 }
 
-static char	*put_word(char **arr, char const *str, int words, int a)
+static char	**put_word(char **arr, char const *str, int words, char c)
 {
 	unsigned int	i;
 	size_t	j;
+	int		a;
 
 	i = 0;
 	j = 0;
+	a = 0;
 	while(str[i] != '\0' && a < words)
     {
         if(str[i] == c)
@@ -64,22 +79,20 @@ static char	*put_word(char **arr, char const *str, int words, int a)
             a++;
         }
     }
-	str_arr[a] = ft_substr(s, 0, 0);
-	return (str_arr);
+	arr[a] = ft_substr(str, 0, 0);
+	return (arr);
 }
 
 char	**ft_split(char const *str, char c)
 {
 	int	words;
 	char **str_arr;
-	int	id_arr;
 
-	id_arr = 0;
 	words = count_wds(str,c);
 	str_arr = (char **)malloc(sizeof(char *) * (words + 1));
 	if (str_arr == NULL)
 		return (NULL);
-	put_word(str_arr, str, words, id_arr);
+	put_word(str_arr, str, words, c);
 	return (str_arr);
 }
 
