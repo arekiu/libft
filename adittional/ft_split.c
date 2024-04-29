@@ -6,7 +6,7 @@
 /*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 10:09:01 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/29 10:25:56 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:15:44 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,36 @@
 char	**ft_split(char const *s, char c);
 
 
+static size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
+static char	*ft_strchr(const char *str, int c)
+{
+	int				i;
+	unsigned char	ce;
+
+	i = 0;
+	ce = c;
+	while (str[i] != '\0')
+	{
+		if (str[i] == ce)
+			return ((char *)(str + i));
+		i++;
+	}
+	if (str[i] == ce)
+		return ((char *)(str + i));
+	return (0);
+}
+
 static int	count_wds(char const *s, char c)
 {
 	int	i;
@@ -23,20 +53,23 @@ static int	count_wds(char const *s, char c)
 
 	i = 0;
 	counter = 0;
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
-		if(s[i] == c)
+		if (s[i] == c)
 			i++;
 		else
 		{
-			while(s[i] != c)
+			while (s[i] != c)
+			{
+				if (s[i] == '\0')
+					return (counter);
 				i++;
+			}
 			counter++;
 		}
 	}
 	return (counter);
 }
-
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -56,53 +89,95 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (sub);
 }
 
-static char	**put_word(char **arr, char const *str, int words, char c)
-{
-	unsigned int	i;
-	size_t	j;
-	int		a;
 
-	i = 0;
-	j = 0;
-	a = 0;
-	while(str[i] != '\0' && a < words)
+static void *ft_free(char **arr, int elem)
+{
+    int i;
+
+    i = 0;
+    while (i < elem)
     {
-        if(str[i] == c)
-            i++;
+        free(arr[i]);
+        i++;
+    }
+    free(arr);
+    return (NULL);
+}
+
+static char     **put_word(char **arr, char const *str, int words, char c)
+{
+        unsigned int    i;
+        size_t                  j;
+        int                             a;
+
+        i = 0;
+        j = 0;
+        a = 0;
+        if (words == 0)
+        {
+                arr[0] = NULL;
+                return (arr);
+        }
+        arr[a] = NULL;
+        while (str[i] != '\0' && a < words)
+        {
+                if (str[i] == c)
+                        i++;
+                else
+                {
+                        j = 0;
+                        while (str[i + j] != c)
+                                j++;
+                        arr[a] = ft_substr(str, i, j);
+                        if (!(arr[a]))
+                                ft_free(arr, a);
+                        i = i + j;
+                        a++;
+                }
+        }
+        arr[a] = '\0';
+        return (arr);
+}
+
+
+char    **ft_split(char const *str, char c)
+{
+        int             words;
+        char    **str_arr;
+
+        if (str[0] == '\0')
+                words = 0;
         else
         {
-            while(str[i + j] != c)
-                j++;
-            arr[a] = ft_substr(str, i, j);
-            i = i + j;
-            j = 0;
-            a++;
+                words = count_wds(str, c);
+                if (words == 0)
+                        words = 1;
         }
-    }
-	arr[a] = ft_substr(str, 0, 0);
-	return (arr);
+        str_arr = (char **)malloc(sizeof(char *) * (words + 1));
+        if (str_arr == NULL)
+                return (NULL);
+        if (ft_strchr(str, c) == 0 && str[0] != '\0')
+        {
+                str_arr[0] = ft_substr(str, 0, ft_strlen(str));
+                if (!(str_arr[0]))
+                        ft_free(str_arr, 0);
+                str_arr[1] = NULL;
+        }
+        else
+                put_word(str_arr, str, words, c);
+        return (str_arr);
 }
 
-char	**ft_split(char const *str, char c)
-{
-	int	words;
-	char **str_arr;
-
-	words = count_wds(str,c);
-	str_arr = (char **)malloc(sizeof(char *) * (words + 1));
-	if (str_arr == NULL)
-		return (NULL);
-	put_word(str_arr, str, words, c);
-	return (str_arr);
-}
 
 int	main(void)
 {
-	char *str = "  Esta wea qlia fome del ort ";
+	char *str = " holische";
 	char	c = ' ';
 
 	int num_words = count_wds(str,c);
 	printf("num wds %d\n", num_words);
+	char **array = ft_split(str, c);
+	printf("la palabra %s\n", array[1]);
 
 	return (0);
 }

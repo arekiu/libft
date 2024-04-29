@@ -6,7 +6,7 @@
 /*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 16:07:06 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/23 17:05:55 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/29 12:44:06 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ static int	check_start(char const *s1, char const *set)
 		}
 		return (i);
 	}
+	return (i);
 }
 
 static int	check_end(char const *s1, char const *set)
@@ -71,18 +72,19 @@ static int	check_end(char const *s1, char const *set)
 		}
 		return (i);
 	}
+	return (i);
 }
-/*
+
 int	main(void)
 {
-	char *str1 = "acbabcla wea fomeccbcaba";
+	char *str1 = "acbabcaba";
 	char *set = "abc";
 
 
 	printf("index start: %d\n", check_start(str1, set));
 	printf("index end: %d\n", check_end(str1, set));
 	printf("FT: %s\n", ft_strtrim(str1, set));
-}*/
+}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -96,6 +98,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = check_start(s1, set);
 	end = check_end(s1, set);
 	len = end - start + 1;
+	if (len < 0)
+		len = 0;
 	buffer = malloc(sizeof(char) * (len + 1));
 	if (buffer == NULL)
 		return (NULL);

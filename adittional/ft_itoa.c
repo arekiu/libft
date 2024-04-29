@@ -6,14 +6,14 @@
 /*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 10:08:51 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/29 10:08:54 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/29 10:44:11 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-char *ft_itoa(int n);
+char	*ft_itoa(int n);
 
 static int	num_len(int n)
 {
@@ -32,16 +32,16 @@ static int	num_len(int n)
 		n = n / 10;
 		i++;
 	}
-	return i;
+	return (i);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int	i;
-	int	count;
+	int		i;
+	int		count;
 	char	*num_char;
 
-	if	(n == -2147483648)
+	if (n == -2147483648)
 		return ("-2147483648");
 	count = num_len(n);
 	i = 0;
