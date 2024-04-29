@@ -6,13 +6,14 @@
 /*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 12:17:58 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/24 13:49:14 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:26:54 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>  /* SIZE_MAX */
 /*
 void	*ft_calloc(size_t count, size_t size);
 
@@ -46,6 +47,8 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t			i;
 
 	i = 0;
+	if (size > 0 && count * size > SIZE_MAX)
+		return (NULL);
 	buffer = malloc(count * size);
 	if (buffer == NULL)
 	{
