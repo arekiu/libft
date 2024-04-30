@@ -6,7 +6,7 @@
 /*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 10:09:01 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/29 16:15:44 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/30 10:03:22 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,29 +46,24 @@ static char	*ft_strchr(const char *str, int c)
 	return (0);
 }
 
-static int	count_wds(char const *s, char c)
+static int      count_wds(char const *s, char c)
 {
-	int	i;
-	int	counter;
+        int     i;
+        int     counter;
 
-	i = 0;
-	counter = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-			i++;
-		else
-		{
-			while (s[i] != c)
-			{
-				if (s[i] == '\0')
-					return (counter);
-				i++;
-			}
-			counter++;
-		}
-	}
-	return (counter);
+        i = 0;
+        counter = 0;
+        while (s[i] != '\0')
+        {
+                while (s[i] == c)
+                        i++;
+                if (s[i] == '\0')
+                        return (counter);
+                counter++;
+                while (s[i] != c && s[i] != '\0')
+                        i++;
+        }
+        return (counter);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -104,41 +99,37 @@ static void *ft_free(char **arr, int elem)
     return (NULL);
 }
 
-static char     **put_word(char **arr, char const *str, int words, char c)
+static char **put_word(char **arr, char const *str, int words, char c)
 {
         unsigned int    i;
-        size_t                  j;
-        int                             a;
+        int             a;
+        int             start;
 
         i = 0;
-        j = 0;
         a = 0;
-        if (words == 0)
-        {
-                arr[0] = NULL;
-                return (arr);
-        }
-        arr[a] = NULL;
         while (str[i] != '\0' && a < words)
         {
-                if (str[i] == c)
+                while (str[i] == c)
                         i++;
-                else
+                if (str[i] != '\0')
                 {
-                        j = 0;
-                        while (str[i + j] != c)
-                                j++;
-                        arr[a] = ft_substr(str, i, j);
+                        start = i;
+                        while (str[i] != c && str[i] != '\0')
+                                i++;
+                        arr[a] = ft_substr(str, start, i - start);
                         if (!(arr[a]))
+                        {
                                 ft_free(arr, a);
-                        i = i + j;
+                                return NULL;
+                        }
                         a++;
+                        while (str[i] == c)
+                                i++;
                 }
         }
-        arr[a] = '\0';
-        return (arr);
+        arr[a] = NULL;
+        return arr;
 }
-
 
 char    **ft_split(char const *str, char c)
 {
@@ -167,8 +158,7 @@ char    **ft_split(char const *str, char c)
                 put_word(str_arr, str, words, c);
         return (str_arr);
 }
-
-
+/*
 int	main(void)
 {
 	char *str = " holische";
@@ -180,4 +170,4 @@ int	main(void)
 	printf("la palabra %s\n", array[1]);
 
 	return (0);
-}
+}*/

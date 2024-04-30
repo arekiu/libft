@@ -6,7 +6,7 @@
 /*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 10:08:51 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/29 10:44:11 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/04/30 10:13:26 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,35 @@
 #include <stdlib.h>
 
 char	*ft_itoa(int n);
+
+static char	*ft_strcpy(char *dest, char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+char	*ft_strdup(const char *s1)
+{
+	size_t	size;
+	char	*buffer;
+
+	size = ft_strlen(s1);
+	buffer = malloc(sizeof(char) * size + 1);
+	if (buffer == NULL)
+	{
+		return (NULL);
+	}
+	ft_strcpy(buffer, (char *)s1);
+	return (buffer);
+}
 
 static int	num_len(int n)
 {
@@ -42,7 +71,7 @@ char	*ft_itoa(int n)
 	char	*num_char;
 
 	if (n == -2147483648)
-		return ("-2147483648");
+		return (ft_strdup("-2147483648"));
 	count = num_len(n);
 	i = 0;
 	num_char = (char *)malloc(sizeof(char) * (count + 1));
@@ -66,5 +95,6 @@ char	*ft_itoa(int n)
 
 int	main(void)
 {
-	printf("%s\n", ft_itoa(-4542));
+	printf("%s\n", ft_itoa(-2147483648));
+
 }
